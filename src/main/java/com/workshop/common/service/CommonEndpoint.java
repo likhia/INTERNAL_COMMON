@@ -54,7 +54,7 @@ public class CommonEndpoint {
     public List<VehicleEntity> getVehiclesByUser(@QueryParam("user") String user) {
         List<VehicleEntity> result = null;
 
-        if (user == null) {
+        if ((user == null) || (user.trim().length() == 0)){
             result = new ArrayList<VehicleEntity>();
             Iterator<VehicleEntity> iter = repository.findAll().iterator();
             while(iter.hasNext()) {
