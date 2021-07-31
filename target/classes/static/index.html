@@ -43,10 +43,12 @@
 <script>
   $(document).ready(function () {
     $("#invoke").click(function (e) {
-      var n = $("#type").val() || "NORMAL";
+      var n = $("#type").val() || "World";
+      alert(n);
       
-      $.getJSON("/api/common/carplate?type=" + n, function (res) {
-        $("#carplate-result").text(JSON.stringify(res));
+      var api = "/api/common/getvehiclebyuser?user=Jas";
+      $.getJSON(api).then(function (data) {
+         alert(JSON.stringify(data));
       });
       
       e.preventDefault();

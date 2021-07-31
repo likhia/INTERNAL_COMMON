@@ -10,9 +10,19 @@ import java.util.Random;
 
 import org.springframework.stereotype.Component;
 
+import org.springframework.beans.factory.annotation.Autowired;
+import com.workshop.common.entity.*;
+import java.util.List;
+import java.util.ArrayList;
+import java.util.Iterator;
+
 @Path("/common")
 @Component
 public class CommonEndpoint {
+
+    //Define Repository
+    @Autowired
+    private VehicleRepository repository;
 
     @GET
     @Path("/carplate")
@@ -36,5 +46,30 @@ public class CommonEndpoint {
         }
 
         return plateNo;
+    }
+
+    @GET
+    @Path("/getvehiclebyuser")
+    @Produces("application/json")
+    public List<VehicleEntity> getVehiclesByUser(@QueryParam("user") String user) {
+        List<VehicleEntity> result = null;
+
+        if (user == null) {
+            result = new ArrayList<VehicleEntity>();
+            Iterator<VehicleEntity> iter = repository.findAll().iterator();
+            while(iter.hasNext()) {
+                result.add(iter.next());
+            }
+        } else {
+            result = repository.findByUser(user); 
+        }
+        return result;
+    }
+
+    @GET
+    @Path("/getvehiclebycarplate")
+    @Produces("application/json")
+    public List<VehicleEntity> getVehiclesByCarplate(@QueryParam("carplate") @DefaultValue("NOASSIGN") String carplate) {
+        return repository.findByCarplate(carplate);
     }
 }
