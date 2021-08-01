@@ -1,0 +1,51 @@
+kind: Deployment
+apiVersion: apps/v1
+metadata:
+  name: services
+  labels:
+    app: services
+    group: com.workshop.common
+    provider: jkube
+    version: 1.0.0-SNAPSHOT
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: services
+      group: com.workshop.common
+      provider: jkube
+  template:
+    metadata:
+      creationTimestamp: null
+      labels:
+        app: services
+        group: com.workshop.common
+        provider: jkube
+        version: 1.0.0-SNAPSHOT
+    spec:
+      volumes:
+        - name: config
+          configMap:
+            name: common-config-map
+            items:
+              - key: application.properties
+                path: application.properties
+            defaultMode: 420
+      containers:
+        - name: spring-boot
+          image: image-registry.openshift-image-registry.svc:5000/common-sit/services:latest
+          env:
+            - name: KUBERNETES_NAMESPACE
+              valueFrom:
+                fieldRef:
+                  apiVersion: v1
+                  fieldPath: metadata.namespace
+          ports:
+            - name: http
+              containerPort: 8080
+              protocol: TCP
+          volumeMounts:
+            - name: config
+              readOnly: true
+              mountPath: /deployments/config
+          
