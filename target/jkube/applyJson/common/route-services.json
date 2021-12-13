@@ -1,0 +1,118 @@
+{
+  "apiVersion" : "route.openshift.io/v1",
+  "kind" : "Route",
+  "metadata" : {
+    "annotations" : {
+      "app.kubernetes.io/vcs-uri" : "git@github.com:snowdrop/rest-http-example.git",
+      "app.openshift.io/vcs-ref" : "master",
+      "app.openshift.io/vcs-uri" : "https://github.com/likhia/INTERNAL_COMMON.git",
+      "jkube.io/git-branch" : "master",
+      "jkube.io/git-commit" : "904f66ad75e1e7e6738b17f25706c45f13252b6f",
+      "jkube.io/git-url" : "https://github.com/likhia/INTERNAL_COMMON.git",
+      "jkube.io/issue-system" : "GitHub",
+      "jkube.io/issue-tracker-url" : "https://github.com/snowdrop/spring-boot-bom/issues",
+      "jkube.io/scm-tag" : "2.3.2.Beta1",
+      "jkube.io/scm-url" : "https://github.com/snowdrop/spring-boot-bom/services"
+    },
+    "creationTimestamp" : "2021-12-13T05:09:16Z",
+    "labels" : {
+      "app" : "services",
+      "app.kubernetes.io/component" : "frontend",
+      "app.kubernetes.io/name" : "http-api",
+      "app.kubernetes.io/part-of" : "http-api-example",
+      "app.openshift.io/runtime" : "rh-spring-boot",
+      "app.openshift.io/runtime-version" : "2.3.2.RELEASE",
+      "group" : "com.workshop.common",
+      "provider" : "jkube",
+      "version" : "1.0.0-SNAPSHOT"
+    },
+    "managedFields" : [ {
+      "apiVersion" : "route.openshift.io/v1",
+      "fieldsType" : "FieldsV1",
+      "fieldsV1" : {
+        "f:metadata" : {
+          "f:annotations" : {
+            "." : { },
+            "f:app.kubernetes.io/vcs-uri" : { },
+            "f:app.openshift.io/vcs-ref" : { },
+            "f:app.openshift.io/vcs-uri" : { },
+            "f:jkube.io/git-branch" : { },
+            "f:jkube.io/git-commit" : { },
+            "f:jkube.io/git-url" : { },
+            "f:jkube.io/issue-system" : { },
+            "f:jkube.io/issue-tracker-url" : { },
+            "f:jkube.io/scm-tag" : { },
+            "f:jkube.io/scm-url" : { }
+          },
+          "f:labels" : {
+            "." : { },
+            "f:app" : { },
+            "f:app.kubernetes.io/component" : { },
+            "f:app.kubernetes.io/name" : { },
+            "f:app.kubernetes.io/part-of" : { },
+            "f:app.openshift.io/runtime" : { },
+            "f:app.openshift.io/runtime-version" : { },
+            "f:group" : { },
+            "f:provider" : { },
+            "f:version" : { }
+          }
+        },
+        "f:spec" : {
+          "f:port" : {
+            "." : { },
+            "f:targetPort" : { }
+          },
+          "f:to" : {
+            "f:kind" : { },
+            "f:name" : { },
+            "f:weight" : { }
+          },
+          "f:wildcardPolicy" : { }
+        }
+      },
+      "manager" : "okhttp",
+      "operation" : "Update",
+      "time" : "2021-12-13T05:09:16Z"
+    }, {
+      "apiVersion" : "route.openshift.io/v1",
+      "fieldsType" : "FieldsV1",
+      "fieldsV1" : {
+        "f:status" : {
+          "f:ingress" : { }
+        }
+      },
+      "manager" : "openshift-router",
+      "operation" : "Update",
+      "time" : "2021-12-13T05:09:16Z"
+    } ],
+    "name" : "services",
+    "namespace" : "common",
+    "resourceVersion" : "852831",
+    "uid" : "65c69d7d-9105-482c-8582-cce3fbb4c144"
+  },
+  "spec" : {
+    "host" : "services-common.apps.cluster-s5jpz.s5jpz.sandbox1604.opentlc.com",
+    "port" : {
+      "targetPort" : 8080
+    },
+    "to" : {
+      "kind" : "Service",
+      "name" : "services",
+      "weight" : 100
+    },
+    "wildcardPolicy" : "None"
+  },
+  "status" : {
+    "ingress" : [ {
+      "conditions" : [ {
+        "lastTransitionTime" : "2021-12-13T05:09:16Z",
+        "status" : "True",
+        "type" : "Admitted"
+      } ],
+      "host" : "services-common.apps.cluster-s5jpz.s5jpz.sandbox1604.opentlc.com",
+      "routerCanonicalHostname" : "router-default.apps.cluster-s5jpz.s5jpz.sandbox1604.opentlc.com",
+      "routerName" : "default",
+      "wildcardPolicy" : "None"
+    } ]
+  }
+}

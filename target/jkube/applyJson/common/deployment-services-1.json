@@ -1,0 +1,354 @@
+{
+  "apiVersion" : "apps/v1",
+  "kind" : "Deployment",
+  "metadata" : {
+    "annotations" : {
+      "app.openshift.io/vcs-ref" : "master",
+      "app.openshift.io/vcs-uri" : "https://github.com/likhia/INTERNAL_COMMON.git",
+      "jkube.io/git-branch" : "master",
+      "jkube.io/git-commit" : "904f66ad75e1e7e6738b17f25706c45f13252b6f",
+      "jkube.io/git-url" : "https://github.com/likhia/INTERNAL_COMMON.git",
+      "jkube.io/issue-system" : "GitHub",
+      "jkube.io/issue-tracker-url" : "https://github.com/snowdrop/spring-boot-bom/issues",
+      "jkube.io/scm-tag" : "2.3.2.Beta1",
+      "jkube.io/scm-url" : "https://github.com/snowdrop/spring-boot-bom/services"
+    },
+    "creationTimestamp" : "2021-12-13T05:09:16Z",
+    "generation" : 2,
+    "labels" : {
+      "app" : "services",
+      "group" : "com.workshop.common",
+      "provider" : "jkube",
+      "version" : "1.0.0-SNAPSHOT"
+    },
+    "managedFields" : [ {
+      "apiVersion" : "apps/v1",
+      "fieldsType" : "FieldsV1",
+      "fieldsV1" : {
+        "f:status" : {
+          "f:conditions" : {
+            "." : { },
+            "k:{\"type\":\"Available\"}" : {
+              "." : { },
+              "f:lastTransitionTime" : { },
+              "f:lastUpdateTime" : { },
+              "f:message" : { },
+              "f:reason" : { },
+              "f:status" : { },
+              "f:type" : { }
+            },
+            "k:{\"type\":\"Progressing\"}" : {
+              "." : { },
+              "f:lastTransitionTime" : { },
+              "f:lastUpdateTime" : { },
+              "f:message" : { },
+              "f:reason" : { },
+              "f:status" : { },
+              "f:type" : { }
+            }
+          },
+          "f:observedGeneration" : { },
+          "f:replicas" : { },
+          "f:unavailableReplicas" : { },
+          "f:updatedReplicas" : { }
+        }
+      },
+      "manager" : "kube-controller-manager",
+      "operation" : "Update",
+      "time" : "2021-12-13T05:09:16Z",
+      "subresource" : "status"
+    }, {
+      "apiVersion" : "apps/v1",
+      "fieldsType" : "FieldsV1",
+      "fieldsV1" : {
+        "f:metadata" : {
+          "f:annotations" : {
+            "." : { },
+            "f:app.openshift.io/vcs-ref" : { },
+            "f:app.openshift.io/vcs-uri" : { },
+            "f:jkube.io/git-branch" : { },
+            "f:jkube.io/git-commit" : { },
+            "f:jkube.io/git-url" : { },
+            "f:jkube.io/issue-system" : { },
+            "f:jkube.io/issue-tracker-url" : { },
+            "f:jkube.io/scm-tag" : { },
+            "f:jkube.io/scm-url" : { }
+          },
+          "f:labels" : {
+            "." : { },
+            "f:app" : { },
+            "f:group" : { },
+            "f:provider" : { },
+            "f:version" : { }
+          }
+        },
+        "f:spec" : {
+          "f:progressDeadlineSeconds" : { },
+          "f:replicas" : { },
+          "f:revisionHistoryLimit" : { },
+          "f:selector" : { },
+          "f:strategy" : {
+            "f:rollingUpdate" : {
+              "." : { },
+              "f:maxSurge" : { },
+              "f:maxUnavailable" : { }
+            },
+            "f:type" : { }
+          },
+          "f:template" : {
+            "f:metadata" : {
+              "f:labels" : {
+                "." : { },
+                "f:app" : { },
+                "f:group" : { },
+                "f:provider" : { },
+                "f:version" : { }
+              }
+            },
+            "f:spec" : {
+              "f:containers" : {
+                "k:{\"name\":\"spring-boot\"}" : {
+                  "." : { },
+                  "f:env" : {
+                    "." : { },
+                    "k:{\"name\":\"KUBERNETES_NAMESPACE\"}" : {
+                      "." : { },
+                      "f:name" : { },
+                      "f:valueFrom" : {
+                        "." : { },
+                        "f:fieldRef" : { }
+                      }
+                    }
+                  },
+                  "f:image" : { },
+                  "f:imagePullPolicy" : { },
+                  "f:livenessProbe" : {
+                    "." : { },
+                    "f:failureThreshold" : { },
+                    "f:httpGet" : {
+                      "." : { },
+                      "f:path" : { },
+                      "f:port" : { },
+                      "f:scheme" : { }
+                    },
+                    "f:initialDelaySeconds" : { },
+                    "f:periodSeconds" : { },
+                    "f:successThreshold" : { },
+                    "f:timeoutSeconds" : { }
+                  },
+                  "f:name" : { },
+                  "f:ports" : {
+                    "." : { },
+                    "k:{\"containerPort\":8080,\"protocol\":\"TCP\"}" : {
+                      "." : { },
+                      "f:containerPort" : { },
+                      "f:name" : { },
+                      "f:protocol" : { }
+                    },
+                    "k:{\"containerPort\":8778,\"protocol\":\"TCP\"}" : {
+                      "." : { },
+                      "f:containerPort" : { },
+                      "f:name" : { },
+                      "f:protocol" : { }
+                    },
+                    "k:{\"containerPort\":9779,\"protocol\":\"TCP\"}" : {
+                      "." : { },
+                      "f:containerPort" : { },
+                      "f:name" : { },
+                      "f:protocol" : { }
+                    }
+                  },
+                  "f:readinessProbe" : {
+                    "." : { },
+                    "f:failureThreshold" : { },
+                    "f:httpGet" : {
+                      "." : { },
+                      "f:path" : { },
+                      "f:port" : { },
+                      "f:scheme" : { }
+                    },
+                    "f:initialDelaySeconds" : { },
+                    "f:periodSeconds" : { },
+                    "f:successThreshold" : { },
+                    "f:timeoutSeconds" : { }
+                  },
+                  "f:resources" : { },
+                  "f:securityContext" : {
+                    "." : { },
+                    "f:privileged" : { }
+                  },
+                  "f:terminationMessagePath" : { },
+                  "f:terminationMessagePolicy" : { },
+                  "f:volumeMounts" : {
+                    "." : { },
+                    "k:{\"mountPath\":\"/deployments/config\"}" : {
+                      "." : { },
+                      "f:mountPath" : { },
+                      "f:name" : { },
+                      "f:readOnly" : { }
+                    }
+                  }
+                }
+              },
+              "f:dnsPolicy" : { },
+              "f:restartPolicy" : { },
+              "f:schedulerName" : { },
+              "f:securityContext" : { },
+              "f:terminationGracePeriodSeconds" : { },
+              "f:volumes" : {
+                "." : { },
+                "k:{\"name\":\"config\"}" : {
+                  "." : { },
+                  "f:configMap" : {
+                    "." : { },
+                    "f:defaultMode" : { },
+                    "f:items" : { },
+                    "f:name" : { }
+                  },
+                  "f:name" : { }
+                }
+              }
+            }
+          }
+        }
+      },
+      "manager" : "okhttp",
+      "operation" : "Update",
+      "time" : "2021-12-13T05:09:16Z"
+    } ],
+    "name" : "services",
+    "namespace" : "common",
+    "resourceVersion" : "852815",
+    "uid" : "32b75ba6-3075-4dd3-873a-743b94e2279e"
+  },
+  "spec" : {
+    "progressDeadlineSeconds" : 600,
+    "replicas" : 1,
+    "revisionHistoryLimit" : 10,
+    "selector" : {
+      "matchLabels" : {
+        "app" : "services",
+        "group" : "com.workshop.common",
+        "provider" : "jkube"
+      }
+    },
+    "strategy" : {
+      "rollingUpdate" : {
+        "maxSurge" : "25%",
+        "maxUnavailable" : "25%"
+      },
+      "type" : "RollingUpdate"
+    },
+    "template" : {
+      "metadata" : {
+        "labels" : {
+          "app" : "services",
+          "group" : "com.workshop.common",
+          "provider" : "jkube",
+          "version" : "1.0.0-SNAPSHOT"
+        }
+      },
+      "spec" : {
+        "containers" : [ {
+          "env" : [ {
+            "name" : "KUBERNETES_NAMESPACE",
+            "valueFrom" : {
+              "fieldRef" : {
+                "apiVersion" : "v1",
+                "fieldPath" : "metadata.namespace"
+              }
+            }
+          } ],
+          "image" : "image-registry.openshift-image-registry.svc:5000/common/services@sha256:8d041a7a40dbe19cd817f68aa86f048a2c622d112a34cc41b77f2807d2a789f1",
+          "imagePullPolicy" : "IfNotPresent",
+          "livenessProbe" : {
+            "failureThreshold" : 3,
+            "httpGet" : {
+              "path" : "/actuator/health",
+              "port" : 8080,
+              "scheme" : "HTTP"
+            },
+            "initialDelaySeconds" : 180,
+            "periodSeconds" : 10,
+            "successThreshold" : 1,
+            "timeoutSeconds" : 1
+          },
+          "name" : "spring-boot",
+          "ports" : [ {
+            "containerPort" : 8080,
+            "name" : "http",
+            "protocol" : "TCP"
+          }, {
+            "containerPort" : 9779,
+            "name" : "prometheus",
+            "protocol" : "TCP"
+          }, {
+            "containerPort" : 8778,
+            "name" : "jolokia",
+            "protocol" : "TCP"
+          } ],
+          "readinessProbe" : {
+            "failureThreshold" : 3,
+            "httpGet" : {
+              "path" : "/actuator/health",
+              "port" : 8080,
+              "scheme" : "HTTP"
+            },
+            "initialDelaySeconds" : 10,
+            "periodSeconds" : 10,
+            "successThreshold" : 1,
+            "timeoutSeconds" : 1
+          },
+          "resources" : { },
+          "securityContext" : {
+            "privileged" : false
+          },
+          "terminationMessagePath" : "/dev/termination-log",
+          "terminationMessagePolicy" : "File",
+          "volumeMounts" : [ {
+            "mountPath" : "/deployments/config",
+            "name" : "config",
+            "readOnly" : true
+          } ]
+        } ],
+        "dnsPolicy" : "ClusterFirst",
+        "restartPolicy" : "Always",
+        "schedulerName" : "default-scheduler",
+        "securityContext" : { },
+        "terminationGracePeriodSeconds" : 30,
+        "volumes" : [ {
+          "configMap" : {
+            "defaultMode" : 420,
+            "items" : [ {
+              "key" : "application.properties",
+              "path" : "application.properties"
+            } ],
+            "name" : "common-config-map"
+          },
+          "name" : "config"
+        } ]
+      }
+    }
+  },
+  "status" : {
+    "conditions" : [ {
+      "lastTransitionTime" : "2021-12-13T05:09:16Z",
+      "lastUpdateTime" : "2021-12-13T05:09:16Z",
+      "message" : "Deployment does not have minimum availability.",
+      "reason" : "MinimumReplicasUnavailable",
+      "status" : "False",
+      "type" : "Available"
+    }, {
+      "lastTransitionTime" : "2021-12-13T05:19:17Z",
+      "lastUpdateTime" : "2021-12-13T05:19:17Z",
+      "message" : "ReplicaSet \"services-86b55fffc9\" has timed out progressing.",
+      "reason" : "ProgressDeadlineExceeded",
+      "status" : "False",
+      "type" : "Progressing"
+    } ],
+    "observedGeneration" : 1,
+    "replicas" : 1,
+    "unavailableReplicas" : 1,
+    "updatedReplicas" : 1
+  }
+}

@@ -1,0 +1,18 @@
+spec:
+  template:
+      spec:
+        containers:
+        - volumeMounts:
+          - name: config
+            mountPath: "/deployments/config"
+            readOnly: true
+        volumes:
+          # You set volumes at the Pod level, then mount them into containers inside that Pod
+          - name: config
+            configMap:
+              # Provide the name of the ConfigMap you want to mount.
+              name: common-config-map
+              # An array of keys from the ConfigMap to create as files
+              items:
+              - key: "application.properties"
+                path: "application.properties"
