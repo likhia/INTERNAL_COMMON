@@ -32,7 +32,41 @@ https://appdev.openshift.io/docs/spring-boot-runtime.html#mission-http-api-sprin
 
 * Set username as `admin` and all password as `password` and set MySQL Database Name as `cars`.  Click on [Create]
 
+* Delete the 2 default network policies and create another 2 network policies.
+
+```
+kind: NetworkPolicy
+apiVersion: networking.k8s.io/v1
+metadata:
+  name: deny-by-default
+  namespace: database-sit
+spec:
+  podSelector: {}
+  policyTypes:
+    - Ingress
+
+```
+
+```
+kind: NetworkPolicy
+apiVersion: networking.k8s.io/v1
+metadata:
+  name: allow-sit-services
+spec:
+  podSelector:
+    matchLabels:
+      name: mysql
+  ingress:
+    - from:
+      - namespaceSelector:
+          matchLabels:
+            env: sit
+
+```
+
 * oc new-project common-sit
+
+* oc label namespace common-sit  env=sit
 
 * oc policy add-role-to-user system:image-puller system:serviceaccount:common-sit:default -n common
 
