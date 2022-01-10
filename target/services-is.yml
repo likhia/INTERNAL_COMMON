@@ -10,6 +10,6 @@ items:
     tags:
     - from:
         kind: ImageStreamImage
-        name: services@sha256:8d041a7a40dbe19cd817f68aa86f048a2c622d112a34cc41b77f2807d2a789f1
+        name: services@sha256:b22bd68ec2fdec318134353469486b46b47b0ea7f3adea27998af0d7b01bd9bf
         namespace: common
       name: latest

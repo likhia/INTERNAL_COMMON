@@ -30,7 +30,7 @@ https://appdev.openshift.io/docs/spring-boot-runtime.html#mission-http-api-sprin
 
 * Select `MySQL'.  Choose the one that is not ephemeral. 
 
-* Set username as `admin` and all password as `redhat` and set MySQL Database Name as `cars`.  Click on [Create]
+* Set username as `admin` and all password as `password` and set MySQL Database Name as `cars`.  Click on [Create]
 
 * oc new-project common-sit
 

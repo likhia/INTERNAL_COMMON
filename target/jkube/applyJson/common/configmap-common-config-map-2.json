@@ -1,0 +1,42 @@
+{
+  "apiVersion" : "v1",
+  "kind" : "ConfigMap",
+  "metadata" : {
+    "creationTimestamp" : "2022-01-07T07:44:21Z",
+    "labels" : {
+      "app" : "services",
+      "group" : "com.workshop.common",
+      "provider" : "jkube",
+      "version" : "1.0.0-SNAPSHOT"
+    },
+    "managedFields" : [ {
+      "apiVersion" : "v1",
+      "fieldsType" : "FieldsV1",
+      "fieldsV1" : {
+        "f:data" : {
+          "." : { },
+          "f:application.properties" : { }
+        },
+        "f:metadata" : {
+          "f:labels" : {
+            "." : { },
+            "f:app" : { },
+            "f:group" : { },
+            "f:provider" : { },
+            "f:version" : { }
+          }
+        }
+      },
+      "manager" : "okhttp",
+      "operation" : "Update",
+      "time" : "2022-01-07T07:44:21Z"
+    } ],
+    "name" : "common-config-map",
+    "namespace" : "common",
+    "resourceVersion" : "730528",
+    "uid" : "534d1a83-ac50-4aab-8f5d-4d026b10c4a5"
+  },
+  "data" : {
+    "application.properties" : "resteasy.jaxrs.defaultPath:/api\n\nspring.datasource.url=jdbc:mysql://a2ea71f9f9377491db3560c3e24fcb45-637339731.us-east-2.elb.amazonaws.com:3306/cars\nspring.datasource.username=admin\nspring.datasource.password=redhat\nspring.jpa.hibernate.ddl-auto=update\n\n## Hibernate Properties\n# The SQL dialect makes Hibernate generate better SQL for the chosen database\nspring.jpa.properties.hibernate.dialect = org.hibernate.dialect.MySQL5InnoDBDialect\nspring.datasource.testOnBorrow=true\nspring.datasource.validationQuery=SELECT 1"
+  }
+}

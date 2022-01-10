@@ -1,0 +1,105 @@
+{
+  "apiVersion" : "v1",
+  "kind" : "Service",
+  "metadata" : {
+    "annotations" : {
+      "app.openshift.io/vcs-ref" : "master",
+      "app.openshift.io/vcs-uri" : "https://github.com/likhia/INTERNAL_COMMON.git",
+      "jkube.io/git-branch" : "master",
+      "jkube.io/git-commit" : "d6e1369f588d3ef1ab38899975246fc59976ec99",
+      "jkube.io/git-url" : "https://github.com/likhia/INTERNAL_COMMON.git",
+      "jkube.io/issue-system" : "GitHub",
+      "jkube.io/issue-tracker-url" : "https://github.com/snowdrop/spring-boot-bom/issues",
+      "jkube.io/scm-tag" : "2.3.2.Beta1",
+      "jkube.io/scm-url" : "https://github.com/snowdrop/spring-boot-bom/services",
+      "prometheus.io/path" : "/metrics",
+      "prometheus.io/port" : "9779",
+      "prometheus.io/scrape" : "true"
+    },
+    "creationTimestamp" : "2022-01-07T07:44:20Z",
+    "labels" : {
+      "app" : "services",
+      "expose" : "true",
+      "group" : "com.workshop.common",
+      "provider" : "jkube",
+      "version" : "1.0.0-SNAPSHOT"
+    },
+    "managedFields" : [ {
+      "apiVersion" : "v1",
+      "fieldsType" : "FieldsV1",
+      "fieldsV1" : {
+        "f:metadata" : {
+          "f:annotations" : {
+            "." : { },
+            "f:app.openshift.io/vcs-ref" : { },
+            "f:app.openshift.io/vcs-uri" : { },
+            "f:jkube.io/git-branch" : { },
+            "f:jkube.io/git-commit" : { },
+            "f:jkube.io/git-url" : { },
+            "f:jkube.io/issue-system" : { },
+            "f:jkube.io/issue-tracker-url" : { },
+            "f:jkube.io/scm-tag" : { },
+            "f:jkube.io/scm-url" : { },
+            "f:prometheus.io/path" : { },
+            "f:prometheus.io/port" : { },
+            "f:prometheus.io/scrape" : { }
+          },
+          "f:labels" : {
+            "." : { },
+            "f:app" : { },
+            "f:expose" : { },
+            "f:group" : { },
+            "f:provider" : { },
+            "f:version" : { }
+          }
+        },
+        "f:spec" : {
+          "f:internalTrafficPolicy" : { },
+          "f:ports" : {
+            "." : { },
+            "k:{\"port\":8080,\"protocol\":\"TCP\"}" : {
+              "." : { },
+              "f:name" : { },
+              "f:port" : { },
+              "f:protocol" : { },
+              "f:targetPort" : { }
+            }
+          },
+          "f:selector" : { },
+          "f:sessionAffinity" : { },
+          "f:type" : { }
+        }
+      },
+      "manager" : "okhttp",
+      "operation" : "Update",
+      "time" : "2022-01-07T07:44:20Z"
+    } ],
+    "name" : "services",
+    "namespace" : "common",
+    "resourceVersion" : "730525",
+    "uid" : "b482f48d-00d4-4aaf-a971-0320dc9dc499"
+  },
+  "spec" : {
+    "clusterIP" : "172.30.232.255",
+    "clusterIPs" : [ "172.30.232.255" ],
+    "ipFamilies" : [ "IPv4" ],
+    "ipFamilyPolicy" : "SingleStack",
+    "ports" : [ {
+      "name" : "http",
+      "port" : 8080,
+      "protocol" : "TCP",
+      "targetPort" : 8080
+    } ],
+    "selector" : {
+      "app" : "services",
+      "group" : "com.workshop.common",
+      "provider" : "jkube"
+    },
+    "sessionAffinity" : "None",
+    "type" : "ClusterIP",
+    "internalTrafficPolicy" : "Cluster"
+  },
+  "status" : {
+    "loadBalancer" : { }
+  }
+}
